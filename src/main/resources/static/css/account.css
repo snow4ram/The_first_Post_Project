@@ -1,0 +1,100 @@
+.main_form{
+    margin-top: 250px;
+    margin-right: 20px;
+    margin-left: 20px;
+    padding-right: 0;
+    padding-left: 0;
+    
+}
+
+.form_list{
+    width: 300px;
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 10px;
+    border: 1px solid;
+    border-color: rgb(183, 173, 173);
+    
+    padding: 10px;
+}
+
+.form_item_id{
+    display: flex;
+    align-items:center;
+    position: relative;
+    box-sizing: border-box;
+    /*input 창 크기 조절*/
+    max-width: 100%;
+    min-height: 30px;
+    margin-top: 10px;
+    padding: 0 10px 0 70px;
+}
+
+.form_item_username{
+    display: flex;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+    /*input 창 크기 조절*/
+    max-width: 100%;
+    min-height: 30px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    padding: 0 10px 0 70px;
+}
+
+.form_item_day{
+    
+    
+    display: flex;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+    /*input 창 크기 조절*/
+    max-width: 100%;
+    min-height: 30px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    
+    padding: 0 10px 0 70px;
+}
+
+.form_item_post{
+    
+    display: flex;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+    /*input 창 크기 조절*/
+    max-width: 100%;
+    min-height: 30px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    padding: 5px 0 0 5px;
+
+}
+#content {
+    width: 400px; /* 원하는 가로 너비로 설정 */
+    height: 300px; /* 원하는 세로 높이로 설정 */
+    resize: none;
+
+    
+}
+
+.btn_account{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align:center; 
+    box-sizing: border-box;
+}
+
+.account{
+    display: inline-block;
+    margin-right: 10px;
+}
+
+
+.cancel{
+    display: inline-block;
+    margin-right: 20px;
+}
