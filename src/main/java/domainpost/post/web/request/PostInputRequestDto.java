@@ -33,6 +33,7 @@ public class PostInputRequestDto {
         this.writing = writing;
     }
 
+    //Byilder
     public Post postEntity(){
         return new Post(title, writer, creation_date, writing);
     }

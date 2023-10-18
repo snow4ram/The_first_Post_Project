@@ -18,16 +18,16 @@ public class Post {
     private Long id;
 
     @Column(nullable = false)
-    private String title; //제목
+    private String title;
 
     @Column(nullable = false)
-    private String writer; //작성자
+    private String writer;
 
     @Column(columnDefinition = "DATE")
-    private LocalDate creation_date;//작성 날짜
+    private LocalDate creation_date;
 
     @Column(nullable = false)
-    private String writing;//글쓰기
+    private String writing;
 
     public Post() {
     }

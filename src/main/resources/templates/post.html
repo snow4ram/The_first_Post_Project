@@ -5,37 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="/css/account.css">
+  <style>
+
+  </style>
 </head>
 <body>
 <div class="main_form">
   <div class="form_list" id="form_item_save">
     <form>
-      <div class="form_item_id">
-        <input type="text" id="item_title" placeholder="제목 입력해주세요" value maxlength="10">
-        <label for="item_title"></label>
-      </div>
-      <div class="form_item_username">
 
-        <input type="text" id="item_username" placeholder="사용자 이름" value maxlength="10">
-        <label for="item_username"></label>
+      <div>
+        <div class="form_item_id">
+          <label for="item_title">제목</label>
+          <input type="text" id="item_title" placeholder="제목 입력해주세요" value maxlength="10">
+        </div>
+      </div>
+
+      <div class="form_item_username">
+        <label for="item_username">작성자</label>
+        <input type="text" id="item_username" placeholder="작성자 이름" value maxlength="10">
       </div>
 
       <div class="form_item_day">
-
-        <input type="date" id="item_day" placeholder="날짜 입력해주세요" value maxlength="10">
-        <label for="item_day"></label>
+        <label for="item_day">작성일</label>
+        <input type="date" id="item_day" placeholder="작성일 입력해주세요" value maxlength="10">
       </div>
 
       <div class="form_item_post">
-        <textarea name="content" id="item_content" rows="5" cols="40" placeholder="레시피 평가는 로그인 상태에서만 가능합니다."></textarea>
-        <label for="item_content"></label>
+        <label for="item_content">내용</label>
+        <textarea name="content" id="item_content" rows="5" cols="40" placeholder="0이상 500미만으로 작성해주세요"></textarea>
       </div>
-
       <div class="btn_account">
         <button type="submit" class="account">작성하기</button>
       </div>
-
+      <div class="btn_account">
+        <a href="/api-main">메인 페이지로 이동</a>
+      </div>
     </form>
+
   </div>
 </div>
 <script>
@@ -56,11 +63,14 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script th:inline="javascript" type="text/javascript">
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+</script>
 
+<script th:inline="javascript" type="text/javascript">
   //save 요청시
   const postUpForm = document.getElementById("form_item_save")
+
+
 
   postUpForm.addEventListener('submit' , (e) => {
     e.preventDefault();
@@ -70,16 +80,14 @@
       writer : document.getElementById("item_username").value,
       creation_date : document.getElementById("item_day").value,
       writing : document.getElementById("item_content").value
-    }).then((res) => { // 결과값 출력
+    }).then((res) => { // 결과값 출력 , 전달
       console.log(res)
-      location.href = "/api-post_list";
+      location.href = "/api-post-list";
     }).catch((e) => { // 예외 처리
       alert(e);
     })
-
   })
+
 </script>
-
-
 </body>
 </html>

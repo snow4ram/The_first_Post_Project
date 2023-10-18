@@ -14,16 +14,15 @@ import java.time.LocalDate;
 public class PostUpdateRequestDto {
 
     @NotBlank(message = "제목을 입력해주세요")
-    private String title; //제목
+    private String title;
 
 
     @NotBlank(message = "작성자를 입력해주세요")
-    private String writer; //작성자
+    private String writer;
 
 
     @JsonFormat(shape = JsonFormat.Shape.STRING  , pattern = "yyyy-MM-dd" , timezone = "Asia/Seoul")
-    private LocalDate creation_date;//작성 날짜
-
+    private LocalDate creation_date;
 
     @NotBlank
     @Size(max = 500, message = "0이상 , 500자 미만으로 입력해주세요")

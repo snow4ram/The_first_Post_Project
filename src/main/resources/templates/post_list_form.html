@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:href="@{/css/bootstrap.min.css}"
+          href="../css/bootstrap.min.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+
+<div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>이름</th>
+            <th>날짜</th>
+            <th>작성</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="post : ${allPost}">
+            <td><a href="post_list.html"
+                   th:href="@{/api-findPost/{findPostId}(findPostId=${post.getId()})}"
+                   th:text="${post.getId()}">순서</a></td>
+            <td th:text="${post.getTitle()}"></td>
+            <td th:text="${post.getWriter()}"></td>
+            <td th:text="${post.getCreation_date()}"></td>
+            <td th:text="${post.getWriting()}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div>
+        <a href="/api-posting">POST 작성</a>
+    </div>
+
+</div>
+</body>
+</html>

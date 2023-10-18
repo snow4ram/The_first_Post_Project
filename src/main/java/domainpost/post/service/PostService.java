@@ -5,34 +5,30 @@ import domainpost.post.domain.Post;
 import domainpost.post.repository.PostInformationRepository;
 import domainpost.post.web.request.PostInputRequestDto;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+
 import java.util.List;
 
-/*
- * 기능 : 제목 ,  작성자 , 날짜 , 글쓰기
- * 저장
- * 단 건 조회
- * 전체 조회
- * 수정
- * 삭제
- * */
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class PostService {
 
+    @Autowired
     final PostInformationRepository repository;
 
+    @Transactional
     public void writingAndSaving(PostInputRequestDto requestDto) {
         Post post = requestDto.postEntity();
         repository.save(post);
     }
 
-    //단건 조회
-
-    public Post singleRecordRetrieval(Long findPost) {
+    @Transactional
+    public Post findAPost(Long findPost) {
         Post result = repository.findById(findPost);
 
         if (result == null){
@@ -42,8 +38,14 @@ public class PostService {
         return result;
     }
 
+    @Transactional
     public List<Post> findAllPost() {
         return repository.findAll();
+    }
+
+    @Transactional
+    public void postDelete(Long deletePost) {
+        repository.deleteById(deletePost);
     }
 
 

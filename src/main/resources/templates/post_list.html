@@ -1,25 +1,45 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/account.css">
+
 </head>
 <body>
-<!--임시 테스트 용 html-->
-    <div class="form_list">
-        <div class="form_item_id">
-            <input type="text" th:value="" id="item_text" placeholder="제목 입력해주세요" readonly>
-        </div>
-        <div class="form_item_username">
-            <input type="text" id="item_username"  placeholder="사용자 이름" readonly>    
-        </div>
-        <div class="form_item_day">
-            <input type="date" id="item_day" placeholder="날짜 입력해주세요" readonly>      
-        </div>
-        <div class="form_item_post">
-            <textarea name="content" id="item_content" rows="5" cols="40" placeholder="레시피 평가는 로그인 상태에서만 가능합니다." readonly></textarea>
-        </div>
+<div class="main_form">
+    <div class="form_list" id="form_item_save">
+        <form>
+            <div>
+                <div class="form_item_id">
+                    <label for="item_title">제목</label>
+                    <input type="text" th:value="${post.getTitle()}" id="item_title" readonly>
+                </div>
+            </div>
+
+            <div class="form_item_username">
+                <label for="item_username">작성자</label>
+                <input type="text" th:value="${post.getWriter()}" id="item_username" readonly>
+            </div>
+
+            <div class="form_item_day">
+                <label for="item_day">작성일</label>
+                <input type="date" th:value="${post.getCreation_date()}" id="item_day" readonly>
+            </div>
+
+            <div class="form_item_post">
+                <label for="item_content">내용</label>
+                <textarea name="content" th:text="${post.getWriting()}"
+                          id="item_content" rows="5" cols="40" readonly="readonly">
+                </textarea>
+            </div>
+
+            <div class="btn_account">
+                <a href="/api-main">메인 페이지로 이동</a>
+            </div>
+        </form>
+
     </div>
+</div>
 </body>
 </html>
